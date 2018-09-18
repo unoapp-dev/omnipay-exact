@@ -8,7 +8,7 @@ class Response extends AbstractResponse
 {
     public function isSuccessful()
     {
-        return $this->data && $this->data['error_number'] == 0 &&
+        return isset($this->data) && $this->data && $this->data['error_number'] == 0 &&
             $this->data['transaction_error'] == 0;
     }
 
