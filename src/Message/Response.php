@@ -9,7 +9,7 @@ class Response extends AbstractResponse
     public function isSuccessful()
     {
         return isset($this->data) && $this->data && $this->data['error_number'] == 0 &&
-            $this->data['transaction_error'] == 0;
+            $this->data['transaction_error'] == 0 && $this->data['transaction_approved'] == 1;
     }
 
     public function getCardReference()
